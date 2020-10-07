@@ -1,0 +1,38 @@
+<div class="outer">
+  <div class="inner">
+    <input type="text" name="title" placeholder="Note Title" data-test-id="input-note-title" [(ngModel)]="title" required/>
+    <input type="text" name="status" placeholder="Note Status" [(ngModel)]="status" data-test-id="input-note-status"required/>
+    <button mat-raised-button class="btn btn-success" (click)="addNote()" data-test-id="submit-button"
+    [disabled]="!title || !status">Add Note</button>
+  </div>
+</div>
+<div class="outer">
+  <div class="inner">
+    <button mat-raised-button class="btn active" (click)="setTabValue('All')" data-test-id="allButton">All</button>
+    <button mat-raised-button class="btn" (click)="setTabValue('Active')" data-test-id="activeButton">Active</button>
+    <button mat-raised-button class="btn" (click)="setTabValue('Complete')" data-test-id="completedButton">Complete</button>
+  </div>
+</div>
+
+<div class="showTable">
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>
+            Title
+          </th>
+          <th>
+            Status
+          </th>
+        </tr>
+      </thead>
+      <tbody data-test-id="notesList">
+        <tr *ngFor="let input of inputValue | filterBy: tabValue">
+          <td>{{input.title}}</td>
+          <td>{{input.status}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

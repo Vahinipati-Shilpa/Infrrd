@@ -1,0 +1,32 @@
+.outer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    input {
+      margin: 2%;
+    }
+    .btn {
+      // background-color: transparent;
+      margin: 2%;
+      .active,
+      .btn:hover {
+        background-color: green;
+      }
+    }
+  }
+}
+.showTable {
+  margin-top: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .table-responsive {
+    width: 30%;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+  }
+}
